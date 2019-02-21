@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jobs</h1>
+
+
+<table>
+  <thead>
+  <tr><th><b>Finished JOBS</b></th></tr>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Completed</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @jobs.each do |job| %>
+    <% if job.complete2.present? %>
+      <tr>
+        <td><%= job.name %></td>
+        <td><%= job.location %></td>
+        <td><%= bool_to_word(job.complete2) %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+
+<table>
+  <thead>
+  <tr><th>Not Completed Jobs</th></tr>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Completed</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @jobs.each do |job| %>
+    <% if job.complete2.blank? %>
+      <tr>
+        <td><%= job.name %></td>
+        <td><%= job.location %></td>
+        <td><%= bool_to_word(job.complete2) %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Job', new_job_path %>
