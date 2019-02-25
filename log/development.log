@@ -3805,3 +3805,44 @@ Processing by JobsController#index as HTML
 Completed 200 OK in 576ms (Views: 460.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-21 13:33:34 -0600
+Started GET "/" for 127.0.0.1 at 2019-02-21 13:33:34 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by JobsController#index as HTML
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (69.2ms)
+  Rendered jobs/index.html.erb within layouts/application (61.8ms)
+Completed 200 OK in 1216ms (Views: 1133.6ms | ActiveRecord: 2.4ms)
+
+
+Completed 200 OK in 2374ms (Views: 2291.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2019-02-21 13:33:44 -0600
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:18
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:22
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:22
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:22
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:22
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:22
+  Rendered tasks/index.html.erb within layouts/application (130.7ms)
+Completed 200 OK in 374ms (Views: 308.5ms | ActiveRecord: 2.7ms)
+
+
